@@ -1,7 +1,8 @@
-import { usePlanets } from '../../context/PlanetsProvider';
+import { useContext } from 'react';
+import { PlanetsContext } from '../../context/PlanetsProvider';
 
 function TableComponent() {
-  const { planets, isLoading } = usePlanets();
+  const { planetsQuery, isLoading } = useContext(PlanetsContext);
 
   if (isLoading) return 'Carregando';
 
@@ -25,9 +26,9 @@ function TableComponent() {
         </tr>
       </thead>
       <tbody>
-        {planets.map((planet, index) => (
-          <tr key={ index }>
-            <td>{planet.name}</td>
+        {planetsQuery.map((planet) => (
+          <tr key={ planet.name }>
+            <td data-testid="planet-name">{planet.name}</td>
             <td>{planet.rotation_period}</td>
             <td>{planet.orbital_period}</td>
             <td>{planet.diameter}</td>
