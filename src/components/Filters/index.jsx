@@ -18,6 +18,7 @@ function Filters() {
           <button
             type="button"
             onClick={ () => removeFilter(diameter) }
+            data-testid="remove-button"
           >
             remover
 
@@ -30,6 +31,7 @@ function Filters() {
           <button
             type="button"
             onClick={ () => removeFilter(population) }
+            data-testid="remove-button"
           >
             remover
 
@@ -42,6 +44,7 @@ function Filters() {
           <button
             type="button"
             onClick={ () => removeFilter(rotationPeriod) }
+            data-testid="remove-button"
           >
             remover
 
@@ -54,6 +57,7 @@ function Filters() {
           <button
             type="button"
             onClick={ () => removeFilter(surfaceWater) }
+            data-testid="remove-button"
           >
             remover
 
@@ -66,6 +70,7 @@ function Filters() {
           <button
             type="button"
             onClick={ () => removeFilter(orbitalPeriod) }
+            data-testid="remove-button"
           >
             remover
 

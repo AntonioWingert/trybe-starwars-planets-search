@@ -8,6 +8,7 @@ function TableComponent() {
 
   return (
     <table>
+      <h1>Star Wars</h1>
       <thead>
         <tr>
           <th>Name</th>
