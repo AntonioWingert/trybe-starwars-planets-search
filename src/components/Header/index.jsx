@@ -1,5 +1,7 @@
 import React, { useContext, useState } from 'react';
+import { MdSearch } from 'react-icons/md';
 import { PlanetsContext } from '../../context/PlanetsProvider';
+import { Container, FormContainer, InputContainer } from './style';
 
 function Header() {
   const [filters, setFilters] = useState({
@@ -46,15 +48,17 @@ function Header() {
   const { column, operation, populationNumber, sortColumn } = filters;
 
   return (
-    <main>
-      <input
-        type="text"
-        data-testid="name-filter"
-        onChange={ ({ target }) => filteredByName(target.value) }
-        placeholder="Digite o nome de um planeta"
-      />
+    <Container>
+      <InputContainer>
+        <input
+          type="text"
+          data-testid="name-filter"
+          onChange={ ({ target }) => filteredByName(target.value) }
+        />
+        <MdSearch size={ 25 } />
+      </InputContainer>
 
-      <form>
+      <FormContainer>
         <select
           data-testid="column-filter"
           name="column"
@@ -140,8 +144,8 @@ function Header() {
         >
           Remover todos os filtros ativos
         </button>
-      </form>
-    </main>
+      </FormContainer>
+    </Container>
   );
 }
 

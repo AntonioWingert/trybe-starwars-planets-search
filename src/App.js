@@ -2,14 +2,19 @@ import React from 'react';
 import Filters from './components/Filters';
 import Header from './components/Header';
 import TableComponent from './components/TableComponent';
+import LogoContainer from './styles/LogoContainer';
+import FilterContainer from './styles/FilterContainer';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Filters />
-      <TableComponent />
-    </div>
+    <>
+      <LogoContainer />
+      <FilterContainer>
+        <Header />
+        <Filters />
+        <TableComponent />
+      </FilterContainer>
+    </>
   );
 }
 

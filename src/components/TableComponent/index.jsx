@@ -1,5 +1,8 @@
 import { useContext } from 'react';
 import { PlanetsContext } from '../../context/PlanetsProvider';
+import { TableContainer } from './style';
+
+const MAX_OBJ = 7;
 
 function TableComponent() {
   const { planetsQuery, isLoading } = useContext(PlanetsContext);
@@ -7,8 +10,7 @@ function TableComponent() {
   if (isLoading) return 'Carregando';
 
   return (
-    <table>
-      <h1>Star Wars</h1>
+    <TableContainer>
       <thead>
         <tr>
           <th>Name</th>
@@ -21,9 +23,6 @@ function TableComponent() {
           <th>Surface Water</th>
           <th>Population</th>
           <th>Films</th>
-          <th>Created</th>
-          <th>Edited</th>
-          <th>Url</th>
         </tr>
       </thead>
       <tbody>
@@ -39,13 +38,10 @@ function TableComponent() {
             <td>{planet.surface_water}</td>
             <td>{planet.population}</td>
             <td>{planet.films.map((film) => <p key={ film }>{film}</p>)}</td>
-            <td>{planet.created}</td>
-            <td>{planet.edited}</td>
-            <td>{planet.url}</td>
           </tr>
-        ))}
+        )).slice(0, MAX_OBJ)}
       </tbody>
-    </table>
+    </TableContainer>
   );
 }
 
